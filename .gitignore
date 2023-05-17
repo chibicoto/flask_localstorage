@@ -181,3 +181,5 @@ cython_debug/
 
 # my project
 site-packages/
+_tmp/
+*._tmp
