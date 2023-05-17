@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from wtforms import Form, StringField, validators, SubmitField
+from wtforms import Form, StringField, HiddenField, validators, SubmitField
 
 
 # Flask オブジェクトのインスタンス化
@@ -9,6 +9,7 @@ app = Flask(__name__)
 # WTForms を使い、index.html 側で表示されるフォームを構築する
 class InputForm(Form):
   InputFormTest = StringField('文字を入力してください', [validators.InputRequired()])
+  InputApiKey = HiddenField()
 
   # HTML 側で表示する submit ボタンを表示する
   submit = SubmitField('送信')
@@ -26,7 +27,8 @@ def input():
       return render_template('index.html', forms=form)
     # 条件が当てはまる場合
     outputname_ = request.form['InputFormTest']
-    return render_template('result.html', outputname=outputname_)
+    apikey_ = request.form['InputApiKey']
+    return render_template('result.html', outputname=outputname_, apikey=apikey_)
   
   # GETメソッドの条件
   elif request.method == 'GET':

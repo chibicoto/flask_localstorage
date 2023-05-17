@@ -1,5 +1,7 @@
 # flask_localstorage
 
+## 概要
+Web ブラウザのローカルストレージに保存した値をフォームの送信情報に埋め込んで Flask アプリケーションサーバーに渡すサンプルアプリケーションです。
 
 ## プロジェクト構成
 
@@ -9,6 +11,9 @@ flask_localstorage
 　　├　templates
 　　│　　　├ index.html   ・・・ 入力フォームのページ
 　　│　　　└ result.html  ・・・ 実行結果の表示
+　　├ static
+　　│　　　└ js
+　　│　    　 └ script.js  ・・・ LocalStorage の読み書き
 　　└ app.py              ・・・ アプリケーションのエントリーポイント
 ```
 

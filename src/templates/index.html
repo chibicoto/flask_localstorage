@@ -12,8 +12,26 @@
 
     {{ forms.InputFormTest.label }}<br/>
     {{ forms.InputFormTest }}<br/>
+    {{ forms.InputApiKey }}
     <br/>
 
     {{ forms.submit }}
   </form>
+
+  <div>
+    <div>
+      <h2>API Key をローカルストレージに保存するデモ</h2>
+      <p>ローカルストレージに保存している API key: <span id="currentapikey"></span></p>
+    </div>
+    <form>
+      <label for="apikey">API Key を入力してください:</label>
+      <input type="text" id="apikey" name="apikey" size="50">
+    </form>
+    <div><button id="setapikey">API Key の設定</button></div>
+    <br />
+    <div><button id="delapikey">API Key の削除</button></div>
+  </div>
 </div>
+
+<!-- 静的ファイルは static フォルダ配下に配置する -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
