@@ -8,8 +8,7 @@ window.onload = function () {
   // APIキーの値を表示したい HTML タグの id を currentapikey に設定すること
   document.getElementById('currentapikey').textContent = key
 
-  // TODO: 必要に応じて、
-  //       ここで Flask アプリケーションサーバーに API key を保存する。
+  // 送信フォームの隠し要素に設定しておく
   document.getElementById('InputApiKey').value = key
 }
 
